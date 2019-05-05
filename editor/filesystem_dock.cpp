@@ -756,6 +756,8 @@ void FileSystemDock::_update_file_list(bool p_keep_selection) {
 		Ref<Texture> big_icon;
 
 		String tooltip = fname;
+		if (bool(EditorSettings::get_singleton()->get("docks/filesystem/show_path_in_tooltip")))
+			tooltip = fpath;
 
 		// Select the icons
 		if (!finfo->import_broken) {
